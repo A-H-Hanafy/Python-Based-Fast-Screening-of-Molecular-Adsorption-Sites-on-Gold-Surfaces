@@ -12,7 +12,6 @@ warnings.filterwarnings("ignore", message="Skipping unhashable information")
 
 def get_relaxed_energy(atoms, label):
     atoms.calc = calc
-    # Fix bottom 2 layers of a 4-layer slab (tags 3 and 4)
     if len(atoms) > 2:
         mask = [atom.tag == 3 for atom in atoms]
         atoms.set_constraint(FixAtoms(mask=mask))
