@@ -5,7 +5,7 @@ Description
 -----------
 
 This code calculates the optimized lattice constant (``a``) for bulk Gold (Au) and constructs
-a four-layer (111) slab with a ``3 × 3`` supercell in order to determine the surface energy.
+a Three-layer (111) slab with a ``4 × 4`` supercell in order to determine the surface energy.
 
 The script also calculates the energy of an isolated horizontal PbO molecule in vacuum
 as a reference state. The PbO molecule is then placed on several high-symmetry adsorption
