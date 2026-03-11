@@ -14,9 +14,8 @@ sites on the Au(111) surface in order to simulate the adsorption process.
 Finally, geometry optimization is performed for each configuration and the adsorption
 energy (:math:`E_{ads}`) is calculated to determine the most stable binding site.
 
-
-Adsorption Results
-------------------
+Version 1 : Adsorption Results
+------------------------------------
 
 CHGNet v0.3.0 initialized with 412,525 parameters
 
@@ -26,7 +25,7 @@ CHGNet will run on cpu
 
 The lattice constant a =  4.170016067634946
 
-The Energy of Gold Surface Au(111) =  -113.38893
+The Energy of Gold Surface Au(111) =  -149.93411
 
 The Energy of PbO (Isolated) =  -8.688824
 
@@ -37,9 +36,41 @@ The Energy of PbO (Isolated) =  -8.688824
 +------------+---------------+----------------+----------------+
 |   bridge   | Flat          | -159.7799      | -1.1569        |
 +------------+---------------+----------------+----------------+
-|   fcc      | Flat          | -159.9036         | -1.2806     |
+|   fcc      | Flat          | -159.9036      | -1.2806        |
 +------------+---------------+----------------+----------------+
 |   hcp      | Flat          | -159.8849      | -1.2620        |
 +------------+---------------+----------------+----------------+
 
-Most Stable: fcc (Flat) at -1.2645 eV
+Most Stable: fcc (Flat) at -1.2806 eV
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+Version 2 : Adsorption Results
+------------------------------------
+
+CHGNet v0.3.0 initialized with 412,525 parameters
+
+CHGNet will run on cpu
+
+CHGNet will run on cpu
+
+The lattice constant a =  4.170016067634946
+
+The Energy of Gold Surface Au(111) =  -150.4148
+
+The Energy of PbO (Isolated) =  -8.688824
+
++------------+---------------+----------------+----------------+
+| Site       | Orientation   | E_total (eV)   | E_ads (eV)     |
++============+===============+================+================+
+| ontop      | Flat          | -160.2491      | -1.1455        |
++------------+---------------+----------------+----------------+
+| bridge     | Flat          | -160.2509      | -1.1473        |
++------------+---------------+----------------+----------------+
+| fcc        | Flat          | -160.2109      | -1.1073        |
++------------+---------------+----------------+----------------+
+| hcp        | Flat          | -160.2440      | -1.1403        |
++------------+---------------+----------------+----------------+
+
+Most Stable: fcc (Flat) at -1.2806 eV
