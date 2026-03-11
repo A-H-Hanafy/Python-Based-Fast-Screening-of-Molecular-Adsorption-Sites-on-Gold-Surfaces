@@ -12,7 +12,7 @@ as a reference state. The PbO molecule is then placed on several high-symmetry a
 sites on the Au(111) surface in order to simulate the adsorption process.
 
 Finally, geometry optimization is performed for each configuration and the adsorption
-energy (:math:`E_{ads}`) is calculated to determine the most stable binding site.
+energy (:math:``E_{ads}``) is calculated to determine the most stable binding site.
 
 
 Adsorption Results
