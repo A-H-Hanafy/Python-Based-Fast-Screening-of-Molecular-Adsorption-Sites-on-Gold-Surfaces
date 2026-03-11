@@ -14,7 +14,7 @@ def get_relaxed_energy(atoms, label):
     atoms.calc = calc
     # Fix bottom 2 layers of a 4-layer slab (tags 3 and 4)
     if len(atoms) > 2:
-        mask = [atom.tag > 2 for atom in atoms]
+        mask = [atom.tag == 3 for atom in atoms]
         atoms.set_constraint(FixAtoms(mask=mask))
 
     dyn = BFGS(atoms, logfile=None)
@@ -39,7 +39,7 @@ a_opt = atoms.get_cell()[0, 0]
 print('The lattice constant a = ',a_opt)
 
 #Setup Au(111) Slab
-slab = fcc111('Au', size=(3, 3, 4), vacuum=10.0, a=a_opt)
+slab = fcc111('Au', size=(4, 4, 3), vacuum=10.0, a=a_opt)
 z_surf = np.max(slab.positions[:, 2])
 e_slab = get_relaxed_energy(slab.copy(), "pure_slab")
 print('The Energy of Gold Surface Au(111) = ',e_slab)
@@ -80,6 +80,7 @@ for site_name, (sx, sy) in manual_sites.items():
     system.append(Atom('O', position=o_pos))
 
     system.set_pbc(True)
+    system.wrap()
     label = f"flat_{site_name}"
 
     try:
