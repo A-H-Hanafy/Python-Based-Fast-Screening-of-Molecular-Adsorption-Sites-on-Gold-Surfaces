@@ -142,13 +142,13 @@ for site_name, (sx, sy) in manual_sites.items():
         #system.append(Atom('Pb', position=pb_pos))
     
         mol = Atoms('PbO', positions=[[0, 0, 0], [bond_length, 0, 0]])
-        mol.rotate(angle, 'z', center='COM') # COM = Center of Mass
+        mol.rotate(angle, 'z', center='COM') 
         mol.positions += [sx, sy, z_surf + initial_height]
         system.extend(mol)
 
         system.set_pbc(True)
         system.wrap()
-        label = f"angle_{angle}"
+        label = f"flat_{site_name}_angle_{angle}"
     
         try:
             e_total = get_relaxed_energy(system, label)
