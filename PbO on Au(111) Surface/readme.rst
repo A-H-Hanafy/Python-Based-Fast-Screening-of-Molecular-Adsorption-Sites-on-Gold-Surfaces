@@ -73,4 +73,4 @@ The Energy of PbO (Isolated) =  -8.688824
 | hcp        | Flat          | -160.2440      | -1.1403        |
 +------------+---------------+----------------+----------------+
 
-Most Stable: fcc (Flat) at -1.2806 eV
+Most Stable: fcc (Flat) at -1.1473 eV
