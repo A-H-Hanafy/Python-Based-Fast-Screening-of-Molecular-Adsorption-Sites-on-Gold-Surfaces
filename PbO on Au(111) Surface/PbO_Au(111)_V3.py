@@ -24,7 +24,7 @@ def get_relaxed_energy(atoms, label):
         atoms.set_constraint(FixAtoms(mask=mask))
 
     dyn = BFGS(atoms, logfile=None)
-    dyn.attach(traj.write, interval=1) # حفظ كل خطوة
+    dyn.attach(traj.write, interval=1) 
     dyn.run(fmax=0.05)
     
     write(f"{label}_final.vasp", atoms, format='vasp')
@@ -94,7 +94,7 @@ ref_idx = np.argmin(dist_to_center)
 ref_pos = surf_atoms.positions[ref_idx]
 
 dists = np.linalg.norm(surf_atoms.positions - ref_pos, axis=1)
-neighbor_idx = np.argsort(dists)[1] # ثاني أقرب ذرة (الأولى هي نفسها)
+neighbor_idx = np.argsort(dists)[1] 
 neighbor_pos = surf_atoms.positions[neighbor_idx]
 bridge_site = (ref_pos[:2] + neighbor_pos[:2]) / 2
 
@@ -104,7 +104,7 @@ hollow_pos = (ref_pos[:2] + neighbor_pos[:2] + third_pos[:2]) / 3
 
 is_hcp = False
 for s_pos in sub_atoms.positions:
-    if np.linalg.norm(s_pos[:2] - hollow_pos) < 0.6: # سماحية بسيطة
+    if np.linalg.norm(s_pos[:2] - hollow_pos) < 0.6: 
         is_hcp = True
         break
 
@@ -112,7 +112,7 @@ final_sites = {
     'ontop': ref_pos[:2],
     'bridge': bridge_site,
     'hcp' if is_hcp else 'fcc': hollow_pos,
-    'fcc' if is_hcp else 'hcp': (ref_pos[:2] + neighbor_pos[:2] + surf_atoms.positions[np.argsort(dists)[3]][:2]) / 3 # الموقع الآخر
+    'fcc' if is_hcp else 'hcp': (ref_pos[:2] + neighbor_pos[:2] + surf_atoms.positions[np.argsort(dists)[3]][:2]) / 3 
 }
 
 angles = np.arange(0, 360, 45)
