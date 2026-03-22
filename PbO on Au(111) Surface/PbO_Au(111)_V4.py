@@ -103,9 +103,9 @@ for idx in all_surf_indices:
     dists.append((idx, d))
 
 sorted_neighbors = sorted(dists, key=lambda x: x[1])
-n1_idx = sorted_neighbors[0][0] # المرجع
-n2_idx = sorted_neighbors[1][0] # الجار الأول
-n3_idx = sorted_neighbors[2][0] # الجار الثاني
+n1_idx = sorted_neighbors[0][0] 
+n2_idx = sorted_neighbors[1][0] 
+n3_idx = sorted_neighbors[2][0] 
 
 #ref_idx = surf_atoms[4].index # For Example
 #ref_pos = surf_atoms.positions[ref_idx]
